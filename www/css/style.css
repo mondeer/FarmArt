@@ -1,7 +1,7 @@
 ion-content {
     margin-bottom: 0px !important;
     background-color: #E5DDD5;
-    background-image: url("img/farm.jpg");
+    background-image: url("/img/farm.jpg") no-repeat;
 }
 .myback {
   background-color: #E5DDD5;
