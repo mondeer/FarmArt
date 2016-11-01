@@ -1,0 +1,33 @@
+ion-content {
+    margin-bottom: 10px !important;
+    background-color: #E5DDD5;
+}
+.myback {
+  background-color: #E5DDD5;
+}
+
+.no-border {
+	border: none;
+}
+
+.user {
+    font-weight: bold;
+}
+
+.current-user {
+	float: right;
+    clear: both;
+}
+
+.not-current-user {
+	float: left;
+	clear: both;
+}
+
+.current-user .details {
+	background-color: #DCF8C6;
+}
+
+.not-current-user .details {
+    background-color: #DCDCDC;
+}

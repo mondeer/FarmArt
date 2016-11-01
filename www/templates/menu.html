@@ -1,0 +1,126 @@
+<ion-side-menus class="myback" enable-menu-with-back-views="true" ng-controller="HomeController as home_ctrl">
+  <ion-side-menu-content>
+    <ion-nav-bar class="header-bar bar-balanced">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+
+      <ion-nav-buttons side="right">
+        <a class="button button-icon button-clear ion-home" menu-close href="#">
+        </a>
+        <span></span>
+        <span></span>
+        <a class="button button-icon button-clear ion-android-settings" menu-close href="#">
+        </a>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <ion-tabs class="tabs-icon-top tabs-color-active-balanced">
+
+      <!-- Dashboard Tab -->
+      <ion-tab title="Status" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/app/home">
+        <ion-nav-view ></ion-nav-view>
+      </ion-tab>
+
+      <!-- Chats Tab -->
+      <ion-tab title="Chats" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/app/rooms">
+        <ion-nav-view ></ion-nav-view>
+      </ion-tab>
+
+      <!-- Account Tab -->
+      <ion-tab title="Account" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#">
+        <ion-nav-view></ion-nav-view>
+      </ion-tab>
+
+
+    </ion-tabs>
+
+
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu class="myback" side="left">
+    <ion-header-bar>
+      <img src="img/splash.png" width="200" height="200">
+    </ion-header-bar>
+    <ion-content class="padding">
+      <!--<ion-list>
+        <ion-item menu-close href="#/app/posts">
+          M.O.B Bulletin
+        </ion-item>
+        <ion-item menu-close ng-click="login()">
+          Login
+        </ion-item>
+        <ion-item menu-close href="#/app/sabbathschool">
+          Sabbath School
+        </ion-item>
+        <ion-item menu-close href="#/app/videolib">
+          M.O.B Video Lib
+        </ion-item>
+        <ion-item class="icon ion-help-circled item-icon-left"  menu-close href="#/app/eldersonduty">
+          Elders On Duty
+        </ion-item>
+        <ion-item icon-off="ion-at-outline" icon-on="ion-at" menu-close href="#/app/aboutus">
+
+
+           <a class="item item-icon-left" href="#">
+            <i class="icon ion-help-circled"></i>
+            About Us
+          </a>
+        </ion-item>
+      </ion-list> -->
+      <div class="list body">
+
+  <a class="item item-icon-left body" menu-close href="#">
+    <i class="icon ion-email"></i>
+    M.O.B Bulletin
+  </a>
+
+  <a class="item item-icon-left body item-icon-right" menu-close href="#">
+    <i class="icon ion-home"></i>
+    Sabbath School
+    <span class="item-note">
+      Happy Sabbath
+    </span>
+  </a>
+
+
+  <a class="item item-icon-left body" menu-close href="#">
+    <i class="icon ion-help-circled"></i>
+    Elders On Duty
+    <!-- <span class="badge badge-assertive">0</span> -->
+  </a>
+
+  <a class="item item-icon-left body" menu-close href="#">
+    <i class="icon ion-social-youtube"></i>
+    M.O.B Youtube Channel
+    <span class="item-note">
+      Grammy
+    </span>
+  </a>
+
+  <a class="item item-icon-left text body" menu-close href="#">
+    <i class="icon text ion-help-circled"></i>
+    About Us
+    <!-- <span class="badge badge-assertive">0</span> -->
+  </a>
+
+</div>
+
+<h3 align="center" class="body">My Lib</h3>
+<div class="list text body">
+  <a class="item item-icon-left body" menu-close href="#">
+    <i class="icon ion-image"></i>
+    Gallery
+    <!-- <span class="badge badge-assertive">0</span> -->
+  </a>
+</div>
+
+
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

@@ -1,0 +1,25 @@
+<ion-view view='menuContent' title="Rooms" ng-controller="HomeController as home_ctrl">
+ 	<!-- <header class="bar bar-header bar-balanced">
+ 		<h1 class="title">Rooms</h1>
+ 	</header> -->
+
+  <ion-content class="has-tabs">
+	<!-- <div class="list" ng-repeat="room in home_ctrl.rooms">
+	  <div class="item item-text-wrap text-center dark" ng-click="enterRoom(room)">
+	    <strong>{{room}}</strong>
+	  </div>
+	</div> -->
+
+  <div class="card" ng-repeat="room in home_ctrl.rooms">
+
+    <a class="item item-avatar myback"  ng-click="enterRoom(room)">
+      <img src="img/splash.png">
+      <strong>{{room}}</strong>
+
+    </a>
+
+  </div>
+
+  </ion-content>
+
+</ion-view>

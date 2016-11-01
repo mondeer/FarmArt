@@ -1,0 +1,10 @@
+{
+  "name": "FarmArt",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "^4.14.0",
+    "http": "0.0.0",
+    "mongoose": "^4.6.4",
+    "socket.io": "^1.3.7"
+  }
+}
