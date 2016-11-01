@@ -33,13 +33,11 @@
   </ion-content>
 
 
-<footer class="bar bar-footer bar-balanced item-input-inset">
-
+<footer class="bar bar-footer bar-balanced has-content">
     <label class="item-input-wrapper">
-      <input type="text" ng-model="room_ctrl.message" placeholder="Type a message">
+      <input type="text" id="message" name="message" class="inputBox" ng-model="room_ctrl.message" placeholder="Type a message">
     </label>
-   	<button class="button button-icon icon ion-android-send" ng-click="sendTextMessage()" ></button>
-
+   	<a class="button button-icon icon ion-android-send" ng-click="sendTextMessage()" ></a>
 </footer>
 
 </ion-view>
