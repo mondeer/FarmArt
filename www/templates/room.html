@@ -1,4 +1,4 @@
-<ion-view view="menuContent" class="has-tabs" title="{{ room_ctrl.current_room }}" ng-controller="RoomController as room_ctrl">
+<ion-view view="menuContent" class="has-subheader" title="{{ room_ctrl.current_room.room }}" ng-controller="RoomController as room_ctrl">
  	<!-- <ion-nav-bar class="header-bar bar-balanced">
     <ion-nav-back-button>
     </ion-nav-back-button>
@@ -8,7 +8,7 @@
     </<ion-nav-buttons>
  	</ion-nav-bar> -->
 
-  <ion-content>
+  <ion-content class="has-subheader">
 
 	<div class="list" id="messages" ng-if="room_ctrl.messages.length > 0">
 	    <li class="item item-text-wrap no-border {{ isNotCurrentUser(msg.user) }} myback" ng-repeat="msg in room_ctrl.messages">
@@ -16,7 +16,7 @@
 		    	<div class="details padding">
 					<p>
 						<div class="user">{{ msg.user }}</div>
-						<div class="message">{{ msg.text }}</div>
+						<div class="message">{{ msg.room}}</div>
 					</p>
 					<small>{{ humanize(msg.time) }}</small>
 		    	</div>
@@ -25,8 +25,8 @@
 	</div>
 
 	<div class="card" ng-if="!room_ctrl.messages.length">
-	  <div class="item item-text-wrap">
-	    No messages yet.
+	  <div class="item item-text-wrap" align="center">
+	    <p>You can trust us with your privacy.</p>
 	  </div>
 	</div>
 

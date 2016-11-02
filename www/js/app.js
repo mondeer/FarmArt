@@ -25,7 +25,7 @@ angular.module('FarmArt', ['ionic', 'LocalStorageModule', 'btford.socket-io', 'a
 })
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
-  $ionicConfigProvider.tabs.position('bottom');
+  $ionicConfigProvider.tabs.position('top');
 
   $stateProvider
 

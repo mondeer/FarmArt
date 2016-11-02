@@ -1,10 +1,14 @@
 ion-content {
     margin-bottom: 0px !important;
     background-color: #E5DDD5;
-    background-image: url("/img/farm.jpg") no-repeat;
+    background-image: url("/img/farm.jpg") no-repeats;
 }
 .myback {
-  background-color: #E5DDD5;
+  background-color: #EFBE8A;
+}
+
+.mybacky {
+  background-color: transparent;
 }
 
 .no-border {
