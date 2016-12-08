@@ -11,12 +11,12 @@
   <ion-content class="has-subheader">
 
 	<div class="list" id="messages" ng-if="room_ctrl.messages.length > 0">
-	    <li class="item item-text-wrap no-border {{ isNotCurrentUser(msg.user) }} myback" ng-repeat="msg in room_ctrl.messages">
+	    <li class="item item-text-wrap no-border {{ isNotCurrentUser(msg.user) }}" ng-repeat="msg in room_ctrl.messages">
 	    	<div class="msg">
 		    	<div class="details padding">
 					<p>
-						<div class="user">{{ msg.user }}</div>
-						<div class="message">{{ msg.room}}</div>
+						<div class="myback">{{ msg.user }}</div>
+						<div class="myback">{{ msg.text}}</div>
 					</p>
 					<small>{{ humanize(msg.time) }}</small>
 		    	</div>

@@ -19,9 +19,9 @@
 		$scope.isNotCurrentUser = function(user){
 
 			if(current_user != user){
-				return 'not-current-user';
+				return 'chat-bubble left';
 			}
-			return 'current-user';
+			return 'chat-bubble right';
 		};
 
 
@@ -38,7 +38,7 @@
 			me.messages.push(msg);
 			$ionicScrollDelegate.scrollBottom();
 
-			me.message = '';
+			// me.message = '';
 
 			SocketService.emit('send:message', msg);
 		};
