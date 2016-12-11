@@ -19,9 +19,9 @@
 		$scope.isNotCurrentUser = function(user){
 
 			if(current_user != user){
-				return 'chat-bubble left';
+				return 'chat-bubble-left';
 			}
-			return 'chat-bubble right';
+			return 'chat-bubble-right';
 		};
 
 
