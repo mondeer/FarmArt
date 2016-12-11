@@ -4,13 +4,13 @@
  	</header> -->
 
   <ion-content class="has-subheader">
-	<div class="card myback" align="center">
+	<div class="card special" align="center">
 	  Enter a room of your choice to chat with fellow farmers
 	</div>
 
-  <div class="card" ng-repeat="room in home_ctrl.rooms">
+  <div class="card special" ng-repeat="room in home_ctrl.rooms">
 
-    <a class="item item-avatar myback"  ng-click="enterRoom(room)">
+    <a class="item item-avatar special"  ng-click="enterRoom(room)">
       <img src="{{room.pic}}">
       <strong>{{room.room}}</strong>
 
