@@ -6,7 +6,7 @@
 	function SocketService(socketFactory){
 		return socketFactory({
 
-			ioSocket: io.connect('localhost:3000')
+			ioSocket: io.connect('192.168.0.190:3000')
 
 		});
 	}
