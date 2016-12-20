@@ -38,9 +38,8 @@
 			me.messages.push(msg);
 			$ionicScrollDelegate.scrollBottom();
 
-			// me.message = '';
-
 			SocketService.emit('send:message', msg);
+			me.message = '';
 		};
 
 
