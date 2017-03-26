@@ -1,42 +1,87 @@
-angular.module('FarmArt.controllers', [])
+angular.module('BloodBank')
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
-
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-  // Form data for the login modal
-  $scope.loginData = {};
-
-  // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
-
-  // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
-    $scope.modal.hide();
+.controller('LoginCtrl', function($scope, AuthService, $ionicPopup, $state) {
+  $scope.user = {
+    name: '',
+    password: ''
   };
 
-  // Open the login modal
   $scope.login = function() {
-    $scope.modal.show();
+    AuthService.login($scope.user).then(function(msg) {
+      $state.go('menu.home');
+    }, function(errMsg) {
+      var alertPopup = $ionicPopup.alert({
+        title: 'Login failed!',
+        template: errMsg
+      });
+    });
+  };
+})
+
+.controller('smsCtrl', function($scope, AuthService, $ionicPopup, $state) {
+  $scope.user = {
+    to: '',
+    message: ''
   };
 
-  // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
-
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
+  $scope.login = function() {
+    AuthService.login($scope.user).then(function(msg) {
+      $state.go('menu.home');
+    }, function(errMsg) {
+      var alertPopup = $ionicPopup.alert({
+        title: 'Login failed!',
+        template: errMsg
+      });
+    });
   };
+})
+
+.controller('RegisterCtrl', function($scope, AuthService, $ionicPopup, $state) {
+  $scope.user = {
+    name: '',
+    password: ''
+  };
+
+  $scope.signup = function() {
+    AuthService.register($scope.user).then(function(msg) {
+      $state.go('login');
+      var alertPopup = $ionicPopup.alert({
+        title: 'Register success!',
+        template: msg
+      });
+    }, function(errMsg) {
+      var alertPopup = $ionicPopup.alert({
+        title: 'Register failed!',
+        template: errMsg
+      });
+    });
+  };
+})
+
+.controller('InsideCtrl', function($scope, AuthService, API_ENDPOINT, $http, $state) {
+  $scope.destroySession = function() {
+    AuthService.logout();
+  };
+
+  $scope.getInfo = function() {
+    $http.get(API_ENDPOINT.url + '/memberinfo').then(function(result) {
+      $scope.memberinfo = result.data.msg;
+    });
+  };
+
+  $scope.logout = function() {
+    AuthService.logout();
+    $state.go('login');
+  };
+})
+
+.controller('AppCtrl', function($scope, $state, $ionicPopup, AuthService, AUTH_EVENTS) {
+  $scope.$on(AUTH_EVENTS.notAuthenticated, function(event) {
+    AuthService.logout();
+    $state.go('login');
+    var alertPopup = $ionicPopup.alert({
+      title: 'Session Lost!',
+      template: 'Sorry, You have to login again.'
+    });
+  });
 });

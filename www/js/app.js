@@ -1,76 +1,47 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.controllers' is found in controllers.js
-angular.module('FarmArt', ['ionic', 'LocalStorageModule', 'btford.socket-io', 'angularMoment', 'ngSanitize'])
-
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if (window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
-
-
-    }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
-
-  });
-})
+angular.module('BloodBank', ['ionic'])
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
-  $ionicConfigProvider.tabs.position('top');
+	  $ionicConfigProvider.tabs.position('top');
 
   $stateProvider
-
-  .state('app', {
-    url: "/app",
+  .state('menu', {
+    url: '/menu',
     abstract: true,
-    templateUrl: "templates/menu.html",
+    templateUrl: 'templates/menu.html'
   })
-
   .state('login', {
     url: '/login',
-    templateUrl: 'templates/login.html'
+    templateUrl: 'templates/login.html',
+    controller: 'LoginCtrl'
   })
-
-  .state('app.rooms', {
-    url: '/rooms',
-
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/rooms.html',
-        // controller: 'AppCtrl'
-      }
-    }
+  .state('register', {
+    url: '/register',
+    templateUrl: 'templates/register.html',
+    controller: 'RegisterCtrl'
   })
-
-  .state('app.home', {
+  .state('menu.home', {
     url: '/home',
-
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/home.html',
-        // controller: 'AppCtrl'
-      }
-    }
+    templateUrl: 'templates/home.html',
+    controller: 'InsideCtrl'
   })
 
-  .state('app.room', {
-    url: '/room',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/room.html',
-        // controller: 'AppCtrl'
+	.state('menu.rooms', {
+    url: '/rooms',
+    templateUrl: 'templates/rooms.html',
+    controller: 'InsideCtrl'
+  });
+
+  $urlRouterProvider.otherwise('/login');
+})
+
+.run(function ($rootScope, $state, AuthService, AUTH_EVENTS) {
+  $rootScope.$on('$stateChangeStart', function (event,next, nextParams, fromState) {
+    if (!AuthService.isAuthenticated()) {
+      console.log(next.name);
+      if (next.name !== 'login' && next.name !== 'register') {
+        event.preventDefault();
+        $state.go('login');
       }
     }
   });
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
 });

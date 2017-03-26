@@ -1,6 +1,6 @@
 ion-content {
     margin-bottom: 0px !important;
-    background: radial-gradient(darkgoldenrod, #999);
+    background: radial-gradient(rgba(242, 0, 0, 0.5), rgba(94, 0, 0, 1));
     background-image: url("/img/farm.jpg") no-repeats;
 }
 title{
@@ -19,16 +19,28 @@ p{
 }
 
 .special {
-  background-color: lightseagreen;
+  background-color: #f20000;
   color: whitesmoke;
-  
 
 }
-.rnd{
+
+.imondback {
+	background: radial-gradient(rgba(242, 0, 0, 0.5), rgba(94, 0, 0, 1));
+}
+
+.imondred {
+  background-color:rgba(242, 0, 0, 0.9);
+}
+
+.imondwhite {
+  color: #ffffff;
+}
+
+.imondround {
    border-radius: 25px;
-   background-color: lightseagreen;
+   background-color: rgba(242, 0, 0, 0.5);
     padding: 20px;
-    
+
 }
 
 .mybacky {

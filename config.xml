@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="ke.co.afrobay.farmart" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>FarmArt</name>
+<widget id="ke.co.afrobay.BloodBank" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>BloodBank</name>
   <description>
-        An Agricultural platform where farmers meet
+        An App for the life savers
     </description>
   <author email="jmondeer@yahoo.com" href="http://www.afrobay.co.ke/">
-      The FarmArt developers
+      The BloodBank developers
     </author>
   <content src="index.html"/>
   <access origin="*"/>
